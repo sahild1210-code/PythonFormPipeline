@@ -3,16 +3,10 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/sahild1210-code/PythonFormPipeline.git'
-            }
-        }
-
         stage('Setup Python Environment') {
             steps {
                 bat 'python --version'
-                bat 'pip install -r requirements.txt'
+                bat 'python -m pip install -r requirements.txt'
             }
         }
 
